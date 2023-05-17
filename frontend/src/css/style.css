@@ -102,3 +102,15 @@ body {
 #register-container #register-body {
    padding-bottom: 70px;
 }
+
+/* Landing */
+#landing-container #landing-body {
+   padding: 50px;
+}
+#landing-container div h1 {
+   font-size: 70px;
+   margin: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

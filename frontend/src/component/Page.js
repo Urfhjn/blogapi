@@ -2,15 +2,22 @@ import '../css/reset.css';
 import '../css/style.css';
 import { NavLink } from 'react-router-dom';
 import { Footer, Header } from './Template';
+import { useState } from 'react';
 
 export const LoginPage = () => {
 
+   const [form, setForm] = useState({})
+
    const handleForm = e => {
-      
+      setForm({
+         ...form,
+         [e.target.name]: e.target.value
+      })
    }
 
    const login = e => {
-
+      e.preventDefault()
+      console.log(form)
    }
 
    return (
@@ -36,12 +43,17 @@ export const LoginPage = () => {
 
 export const RegistrationPage = () => {
 
+   const [form, setForm] = useState({})
    const handleRegister = e => {
-
+      setForm({
+         ...form,
+         [e.target.name]: e.target.value
+      })
    }
-
+         
    const register = e => {
-
+      e.preventDefault()
+      console.log(form)
    }
 
    return (
@@ -73,7 +85,9 @@ export const LandingPage = () => {
    return (
       <div id="landing-container">
          <Header />
-
+         <div id="landing-body">
+            <h1>Welcome {}!</h1>
+         </div>
          <Footer />
       </div>
    )
